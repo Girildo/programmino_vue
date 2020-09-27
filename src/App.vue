@@ -36,6 +36,7 @@
     <v-main>
       <v-container fluid>
         <UrlForm/>
+        <ParsedComment/>
       </v-container>
     </v-main>
   </v-app>
@@ -44,6 +45,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import UrlForm from "@/components/UrlForm.vue";
+import ParsedComment from "@/components/ParsedComment.vue";
 import { replies$ } from "@/flickr-fetcher";
 
 @Component({components:{UrlForm}})
