@@ -1,0 +1,36 @@
+{
+    "EntryRegex": "(#\\d+){1}",
+    "StopVotingRegex": "#{4,}",
+    "Entries": [
+        {
+            "ID": "",
+            "ExtendedName": "",
+            "Points": 5,
+            "Ordered": true
+        },
+        {
+            "ID": "",
+            "ExtendedName": "",
+            "Points": 4,
+            "Ordered": true
+        },
+        {
+            "ID": "",
+            "ExtendedName": "",
+            "Points": 3,
+            "Ordered": true
+        },
+        {
+            "ID": "",
+            "ExtendedName": "",
+            "Points": 2,
+            "Ordered": true
+        },
+        {
+            "ID": "",
+            "ExtendedName": "",
+            "Points": 1,
+            "Ordered": true
+        }
+    ]
+}

@@ -24,13 +24,13 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 @Component
 export default class UrlForm extends Vue {
     valid = true
-    @Prop()
+    
     value = ""
 
     validation = [(s: string ) =>
     {
       return s.length == 0 || (s.length > 0 && /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/.test(s))
-      ? null :
+      ? true :
        "Non è un url valido di Flickr";
     }];
                   

@@ -35,8 +35,15 @@
 
     <v-main>
       <v-container fluid>
-        <UrlForm/>
-        <ParsedComment/>
+        <UrlForm class="mb-4" @value="fetch" />
+        <v-expansion-panels outline>
+          <v-expansion-panel>
+            <v-expansion-panel-header> Commenti </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <ParsedComment class = "mb-1" v-for="i in 5" :key="i" :Comment="{Author:i, Type: 'Errore'}" />
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
       </v-container>
     </v-main>
   </v-app>
@@ -47,11 +54,12 @@ import { Component, Vue } from "vue-property-decorator";
 import UrlForm from "@/components/UrlForm.vue";
 import ParsedComment from "@/components/ParsedComment.vue";
 import { replies$ } from "@/flickr-fetcher";
+import { ParseComments } from './core/CommentParser';
 
-@Component({components:{UrlForm}})
+@Component({ components: { UrlForm, ParsedComment } })
 export default class App extends Vue {
   public fetch() {
-    replies$().subscribe(console.log);
+    replies$().subscribe(x => ParseComments(x.map(c => c.message?._content ?? "")));
   }
 }
 </script>
